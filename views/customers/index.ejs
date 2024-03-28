@@ -2,18 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
-    <h1>Hellow FSW 1 Tercinta!</h1>
+    <h1>Hello FSW1 tercinta!</h1>
+
     <% if (message != "") { %>
-      <div class="alert">
-        Data Berhasil <%= message %>
-      </div>
-      <% } %>
+    <div class="alert">Data berhasil <%= message %></div>
+    <% } %>
+
     <table>
       <th>id</th>
       <th>name</th>
@@ -31,12 +30,21 @@
         <td><%= customer.email %></td>
         <td><%= customer.createdAt %></td>
         <td>
-          <a href="/customers/edit/<%= customer.id %>"><button>Edit</button></a>
-          <a href="/customers/admin/delete/<%= customer.id %>"><button>Delete</button></a>
+          <a href="/customers/edit/<%= customer.id %>">
+            <button>Edit</button>
+          </a>
+          <form
+            action="/customers/admin/delete/<%= customer.id %>"
+            method="POST"
+          >
+            <button>Delete</button>
+          </form>
         </td>
       </tr>
       <% }) %>
     </table>
-    <a href="/customers/create"> <button>Halaman tambah data</button></a>
+    <a href="/customers/create">
+      <button>tambah customer baru</button>
+    </a>
   </body>
 </html>

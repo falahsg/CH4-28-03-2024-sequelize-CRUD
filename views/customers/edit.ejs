@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
@@ -10,8 +9,12 @@
     <h3>Edit Data Customer</h3>
     <form action="/customers/admin/edit/<%= customer.id %>" method="POST">
       <label for="">Email</label>
-      <input type="email" name="email" id="" placeholder="masukkan email" 
-      value="<%= customer.email %>"/>
+      <input
+        type="email"
+        name="email"
+        placeholder="masukkan email"
+        value="<%= customer.email %>"
+      />
       <br />
       <button>Edit Data</button>
     </form>

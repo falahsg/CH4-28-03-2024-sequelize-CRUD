@@ -49,13 +49,13 @@ const editCustomerPage = async (req, res) => {
 
 const editCustomer = async (req, res) => {
   try {
-    const customer = await Customer.update(req.body, {
+    await Customer.update(req.body, {
       where: {
         id: req.params.id,
       },
     });
     req.flash("message", "Di Edit");
-    res.redirect("/edit");
+    res.redirect("/customers");
   } catch (err) {
     res.render("error.ejs", {
       message: err.message,
